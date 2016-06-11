@@ -93,7 +93,7 @@ function loadtoc(json) {
             var pll = '';
             if ("category" in entry) {
                for (var k = 0; k < entry.category.length; k++) {
-                  pll += '<a href="javascript:filterPosts(\'' + entry.category[k].term + '\');" title=" ÇäŞÑ åäÇ áÊÍÏíÏ ßÇİÉ ÇáãÔÇÑßÇÊ İí ŞÓã \'' + entry.category[k].term + '\'">' + entry.category[k].term + '</a>,  ';
+                  pll += '<a href="javascript:filterPosts(\'' + entry.category[k].term + '\');" title=" Ø§Ù†Ù‚Ø± Ù‡Ù†Ø§ Ù„ØªØ­Ø¯ÙŠØ¯ ÙƒØ§ÙØ© Ø§Ù„Ù…Ø´Ø§Ø±ÙƒØ§Øª ÙÙŠ Ù‚Ø³Ù… \'' + entry.category[k].term + '\'">' + entry.category[k].term + '</a>,  ';
                }
             var l = pll.lastIndexOf(',');
             if (l != -1) { pll = pll.substring(0,l); }
@@ -182,30 +182,30 @@ function displayToc(filter) {
 // this function creates a three-column table and adds it to the screen
    var numDisplayed = 0;
    var tocTable = '';
-   var tocHead1 = 'ÚäæÇä ÇáãŞÇá';
-   var tocTool1 = 'ÇäŞÑ á İÑÒ ÍÓÈ ÇáÚäæÇä';
-   var tocHead2 = 'ÊÇÑíÎ ÇáãŞÇá';
-   var tocTool2 = 'ÇäŞÑ á ÊÑÊíÈ ÇáäÊÇÆÌ ÈÍÓÈ ÇáÊÇÑíÎ';
-   var tocHead3 = 'ÇáÃŞÓÇã';
+   var tocHead1 = 'Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ù…Ù‚Ø§Ù„';
+   var tocTool1 = 'Ø§Ù†Ù‚Ø± Ù„ ÙØ±Ø² Ø­Ø³Ø¨ Ø§Ù„Ø¹Ù†ÙˆØ§Ù†';
+   var tocHead2 = 'ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…Ù‚Ø§Ù„';
+   var tocTool2 = 'Ø§Ù†Ù‚Ø± Ù„ ØªØ±ØªÙŠØ¨ Ø§Ù„Ù†ØªØ§Ø¦Ø¬ Ø¨Ø­Ø³Ø¨ Ø§Ù„ØªØ§Ø±ÙŠØ®';
+   var tocHead3 = 'Ø§Ù„Ø£Ù‚Ø³Ø§Ù…';
    var tocTool3 = '';
    if (sortBy == "titleasc") { 
-      tocTool1 += ' (ÊäÇÒáí)';
-      tocTool2 += ' (ÇáÃÌÏÏ ÃæáÇ)';
+      tocTool1 += ' (ØªÙ†Ø§Ø²Ù„ÙŠ)';
+      tocTool2 += ' (Ø§Ù„Ø£Ø¬Ø¯Ø¯ Ø£ÙˆÙ„Ø§)';
    }
    if (sortBy == "titledesc") { 
-      tocTool1 += ' (ÊÕÇÚÏí)';
-      tocTool2 += ' (ÇáÃÌÏÏ ÃæáÇ)';
+      tocTool1 += ' (ØªØµØ§Ø¹Ø¯ÙŠ)';
+      tocTool2 += ' (Ø§Ù„Ø£Ø¬Ø¯Ø¯ Ø£ÙˆÙ„Ø§)';
    }
    if (sortBy == "dateoldest") { 
-      tocTool1 += ' (ÊÕÇÚÏí)';
-      tocTool2 += ' (ÇáÃÌÏÏ ÃæáÇ)';
+      tocTool1 += ' (ØªØµØ§Ø¹Ø¯ÙŠ)';
+      tocTool2 += ' (Ø§Ù„Ø£Ø¬Ø¯Ø¯ Ø£ÙˆÙ„Ø§)';
    }
    if (sortBy == "datenewest") { 
-      tocTool1 += ' (ÊÕÇÚÏí)';
-      tocTool2 += ' (ÇáÃŞÏã ÃæáÇ)';
+      tocTool1 += ' (ØªØµØ§Ø¹Ø¯ÙŠ)';
+      tocTool2 += ' (Ø§Ù„Ø£Ù‚Ø¯Ù… Ø£ÙˆÙ„Ø§)';
    }
    if (postFilter != '') {
-      tocTool3 = 'ÇäŞÑ á ÚÑÖ ßá ÇáãÔÇÑßÇÊ';
+      tocTool3 = 'Ø§Ù†Ù‚Ø± Ù„ Ø¹Ø±Ø¶ ÙƒÙ„ Ø§Ù„Ù…Ø´Ø§Ø±ÙƒØ§Øª';
    }
    tocTable += '<table>';
    tocTable += '<tr>';
@@ -233,10 +233,10 @@ function displayToc(filter) {
    }
    tocTable += '</table>';
    if (numDisplayed == postTitle.length) {
-      var tocNote = '<span class="toc-note">ÌãíÚ ÇáãæÇÖíÚ ' + postTitle.length + ' ßÇãáÉ<br/></span>'; }
+      var tocNote = '<span class="toc-note">Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…ÙˆØ§Ø¶ÙŠØ¹ ' + postTitle.length + ' ÙƒØ§Ù…Ù„Ø©<br/></span>'; }
    else {
-      var tocNote = '<span class="toc-note">ÚÑÖ ' + numDisplayed + ' ãæÇÖíÚ İí ŞÓã \'';
-      tocNote += postFilter + '\' ãä '+ postTitle.length + ' ÇÌãÇáí ÇáãæÇÖíÚ<br/></span>';
+      var tocNote = '<span class="toc-note">Ø¹Ø±Ø¶ ' + numDisplayed + ' Ù…ÙˆØ§Ø¶ÙŠØ¹ ÙÙŠ Ù‚Ø³Ù… \'';
+      tocNote += postFilter + '\' Ù…Ù† '+ postTitle.length + ' Ø§Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ù…ÙˆØ§Ø¶ÙŠØ¹<br/></span>';
    }
    tocdiv.innerHTML = tocNote + tocTable;
 } // end of displayToc
@@ -269,5 +269,5 @@ function hideToc() {
   var tocdiv = document.getElementById("toc");
   tocdiv.innerHTML = '';
   var toclink = document.getElementById("toclink");
-  toclink.innerHTML = '<a href="#" onclick="scroll(0,0); showToc(); Effect.toggle('+"'toc-result','blind');"+'">» Show Table of Contents</a> <img src="http://chenkaie.blog.googlepages.com/new_1.gif"/>';
+  toclink.innerHTML = '<a href="#" onclick="scroll(0,0); showToc(); Effect.toggle('+"'toc-result','blind');"+'">Â» Show Table of Contents</a> <img src="http://chenkaie.blog.googlepages.com/new_1.gif"/>';
 }
